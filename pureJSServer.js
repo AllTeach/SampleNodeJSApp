@@ -1,6 +1,8 @@
 const http = require('http');
  var fs = require('fs');
 var querystring = require('querystring');
+
+var port = process.env.PORT || 8080;
 		// testing working woth JSON data as DB START
 	
 	var dj = [
@@ -119,4 +121,4 @@ http.createServer((request, response) => {
 	
 	
   
-}).listen(8080); // Activates this server, listening on port 8080.
+}).listen(port); // Activates this server, listening on port 8080.
