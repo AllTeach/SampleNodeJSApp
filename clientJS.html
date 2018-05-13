@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+	
+
+	
+	
+	
+	// TESTING working with JSON as data DB END
+	
+	
+	
+	
+	var username=$("#user").val();
+	var password=$("#pass").val();
+       $.ajax({
+                    type: "POST",
+                //type: "GET",
+                url: 'option1',
+                // for GET
+               // data: { continent: "'" + selectvalue + "'" },
+
+                // for POST
+                  data:JSON.stringify({username: username,password:password}),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+
+		success: function(data){
+			
+			
+			if(data.result != null)
+				$("#div1").text(JSON.stringify(data.result.user));
+			else
+				$("#div1").text('No such user');
+				
+        }});
+    });
+});
+</script>
+</head>
+<body>
+
+username: <input type="text" id='user' placeholder="username"/>
+password: <input type="text" id='pass' placeholder="paswword"/>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button>Get External Content</button>
+
+</body>
+</html>
