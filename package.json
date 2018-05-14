@@ -7,7 +7,6 @@
   }
   "main": "purejsserver.js",
   "scripts": {
-    "test": "clientjs"
     "start": "node purejsserver.js"
   },
   "repository": {
