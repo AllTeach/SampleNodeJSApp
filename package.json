@@ -5,7 +5,6 @@
   "engines": {
     "node": "6.9.1"
   },
-  "main": "purejsserver.js",
   "scripts": {
     "start": "node purejsserver.js"
   },
