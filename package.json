@@ -8,7 +8,7 @@
   "main": "purejsserver.js",
   "scripts": {
     "test": "clientjs"
-    "start": "node server.js"
+    "start": "node purejsserver.js"
   },
   "repository": {
     "type": "git",
