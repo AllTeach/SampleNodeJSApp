@@ -1,27 +1,23 @@
 {
-  "name": "SampleNodeJSApp",
-  "version": "0.2.0",
-  "description": "A sample Node.js app",
-  "main": "pureJSServer.js",
-  "scripts": {
-    "start": "node pureJSServer.js"
-  },
-  "dependencies": {
-    "express": "^4.13.3"
-  },
+  "name": "purejsserver",
+  "version": "1.0.0",
+  "description": "sample ajax",
   "engines": {
-    "node": "4.0.0"
+    "node": "6.9.1"
+  }
+  "main": "purejsserver.js",
+  "scripts": {
+    "test": "clientjs"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AllTeach/SampleNodeJSApp"
+    "url": "git+https://github.com/allteach/SampleNodeJSApp.git"
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "author": "AC",
-  
-  "license": "MIT"
+  "author": "All",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allteach/SampleNodeJSApp/issues"
+  },
+  "homepage": "https://github.com/allteach/SampleNodeJSApp#readme"
 }
