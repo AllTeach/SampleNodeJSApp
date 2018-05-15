@@ -112,6 +112,11 @@ http.createServer((request, response) => {
 	}
 			
 			break;
+		default:
+			response.writeHead(200, {'Content-Type': 'text/html'});
+			response.write("The SERVER is ON");
+			response.end();
+			
 		
 	}
 	
