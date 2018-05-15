@@ -2,6 +2,9 @@ const http = require('http');
  var fs = require('fs');
 var querystring = require('querystring');
 
+var path = require('path');
+
+
 var port = process.env.PORT || 8080;
 		// testing working woth JSON data as DB START
 	
@@ -64,7 +67,9 @@ http.createServer((request, response) => {
 		case '/clientjs.html':
 			var filename = "." + url;
 	
-			fs.readFile(filename, function(err, data) {
+			//fs.readFile(filename, function(err, data) 
+			fs.readFile(path.join(process.cwd(), 'clientjs.html'), function(err, data)
+			{
 			if (err) {
 				console.log('error ' + err);
 				response.writeHead(404, {'Content-Type': 'text/html'});
