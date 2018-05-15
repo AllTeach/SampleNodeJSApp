@@ -1,17 +1,1 @@
-[{
-		"user": {
-			"username": "xz",
-			"password": "xz@123",
-			"email": "xyz@xz.com",
-			"uid": 1100
-		}
-	},
-	{
-		"user": {
-			"username": "yz",
-			"password": "yz@123",
-			"email": "xyz@yz.com",
-			"uid": 1200
-		}
-	}
-]
+[{"user":{"username":"sad","password":"YIYUI","email":"YIUYIY","uid":"7576"}},{"user":{"username":"as","password":"sa","email":"assa","uid":"11221"}},{"user":{"username":"julkjlk","password":"ljlkj","email":"lkjlkjlk","uid":"75765"}},{"user":{"username":"ljljlkjl","password":"jljlkjlkj","email":"lkjlkjlk","uid":"75744"}}]
