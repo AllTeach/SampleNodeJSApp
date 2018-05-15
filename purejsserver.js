@@ -6,31 +6,12 @@ var querystring = require('querystring');
 
 var port = process.env.PORT || 8080;
 		// testing working woth JSON data as DB START
-/*	
-	var dj = [
-{
-user:
-	{
-	'username':'xz',
-	'password':'xz@123',
-	'email':'xyz@xz.com',
-	'uid': 1100
-	}
-},
-{
-user:
-	{
-	'username':'yz',
-	'password':'yz@123',
-	'email':"xyz@yz.com",
-	'uid': 1200
-	}
-}
-]
-*/
+
 'use strict';
 var contents = fs.readFileSync(path.join(process.cwd(), 'users.json'));
 var dj = JSON.parse(contents);
+
+
 
 function processPost(request,response,callback)
 
@@ -89,21 +70,21 @@ http.createServer((request, response) => {
 			});
 			break;
 			
-		case '/option1':
+		case '/login':
 		
 		
 		if(method == 'POST') {
-			processPost(request,response,function(){
-			console.log("req post: " + request.post);
+			processPost(request,response,function()
+			{
+				console.log("req post: " + request.post);
 			
-			
-			var user = JSON.parse(request.post).username;
-			var password = JSON.parse(request.post).password
-			/////var res = n1+n2;
-			
-	
-			var uuu = dj.find(item => 
-				{ return item.user.username == user && item.user.password == password
+				var user = JSON.parse(request.post).username;
+				var password = JSON.parse(request.post).password
+				/////var res = n1+n2;
+				
+		
+				var uuu = dj.find(item => 
+					{ return item.user.username == user && item.user.password == password
 			});
 	
 			console.log(uuu);
@@ -120,7 +101,53 @@ http.createServer((request, response) => {
 	}
 			
 			break;
+		case '/register':	
+			console.log("register")
+		if(method == 'POST') {
+			processPost(request,response,function()
+			{
+				console.log("register post: " + request.post);
 			
+				var obj = JSON.parse(request.post);
+				var user = JSON.parse(request.post).username;
+				var password = JSON.parse(request.post).password
+				/////var res = n1+n2;
+				
+		
+				var uuu = dj.find(item => 
+					{ return item.user.username == user && item.user.password == password
+
+					});				
+					console.log("uuu is: " + uuu);
+			
+				//if (uuu== null) // this means new user -> enter to db
+
+				//{
+					console.log("dj : " + dj);
+					console.log("contents : "+contents);
+					dj.push(obj);
+					
+					fs.writeFileSync(path.join(process.cwd(),'users.json'), JSON.stringify(dj));  
+					
+				//}					
+			
+			
+	
+		//	console.log(uuu);
+			
+			
+			
+			response.writeHead(200, {'Content-Type': 'application/json'});
+			//response.write(JSON.stringify(request.post));
+			response.write(JSON.stringify({result:"success"}));
+			response.end();
+		  
+		  
+	  });
+	}
+		
+		
+		break;
 			
 		default:
 			response.writeHead(200, {'Content-Type': 'text/html'});
