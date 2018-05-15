@@ -2,12 +2,11 @@ const http = require('http');
  var fs = require('fs');
 var querystring = require('querystring');
 
-var path = require('path');
-
+    var path = require('path');
 
 var port = process.env.PORT || 8080;
 		// testing working woth JSON data as DB START
-	
+/*	
 	var dj = [
 {
 user:
@@ -28,6 +27,10 @@ user:
 	}
 }
 ]
+*/
+'use strict';
+var contents = fs.readFileSync(path.join(process.cwd(), 'users.json'));
+var dj = JSON.parse(contents);
 
 function processPost(request,response,callback)
 
@@ -67,9 +70,9 @@ http.createServer((request, response) => {
 		case '/clientjs.html':
 			var filename = "." + url;
 	
-			//fs.readFile(filename, function(err, data) 
+		//	fs.readFile(filename, function(err, data) 
 			fs.readFile(path.join(process.cwd(), 'clientjs.html'), function(err, data)
-			{
+		{
 			if (err) {
 				console.log('error ' + err);
 				response.writeHead(404, {'Content-Type': 'text/html'});
@@ -117,6 +120,8 @@ http.createServer((request, response) => {
 	}
 			
 			break;
+			
+			
 		default:
 			response.writeHead(200, {'Content-Type': 'text/html'});
 			response.write("The SERVER is ON");
