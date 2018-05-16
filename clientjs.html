@@ -3,6 +3,13 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+	$.getJSON('https://allorigins.me/get?url=' + encodeURIComponent('http://ohel-shem.com/portal6/pub/changes/index.php?layer=11'), function(data){
+   // alert(data.contents);
+   $("#response").html(data.contents);
+});
+	
+	
+	
 $(document).ready(function(){
     $("#loginbtn").click(function(){
 	var username=$("#user").val();
@@ -86,6 +93,7 @@ id: <input type="number" id="idReg" placeholder="simpleID"/>
 
 
 <div id="div1"><h2>Result</h2></div>
+<div id="response">response</div>
 
 
 </body>
