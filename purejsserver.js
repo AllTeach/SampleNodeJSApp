@@ -105,8 +105,8 @@ http.createServer((request, response) => {
 			console.log(uuu);
 			
 			
-			
-			response.writeHead(200, {'Content-Type': 'application/json'});
+			     response.writeHead(200, {'Access-Control-Allow-Origin':'*', 'Content-Type': 'application/json' });
+			//response.writeHead(200, {'Content-Type': 'application/json'});
 			//response.write(JSON.stringify(request.post));
 			response.write(JSON.stringify({result:uuu}));
 			response.end();
